@@ -1,0 +1,55 @@
+__mthread_lib_init	mthread.c	/^static inline void __mthread_lib_init(){$/
+__mthread_test_and_set	mthread_tst.c	/^static inline int __mthread_test_and_set(mthread_t/
+__mthread_yield	mthread.c	/^void __mthread_yield(mthread_virtual_processor_t* /
+__not_implemented	mthread_debug.c	/^__not_implemented (const char *func, char *file, i/
+fprintf	mthread_debug.c	/^int fprintf(FILE *stream, const char *format, ...)/
+mthread_cond_broadcast	mthread_cond.c	/^mthread_cond_broadcast (mthread_cond_t * __cond)$/
+mthread_cond_destroy	mthread_cond.c	/^mthread_cond_destroy (mthread_cond_t * __cond)$/
+mthread_cond_init	mthread_cond.c	/^mthread_cond_init (mthread_cond_t * __cond,$/
+mthread_cond_signal	mthread_cond.c	/^mthread_cond_signal (mthread_cond_t * __cond)$/
+mthread_cond_wait	mthread_cond.c	/^mthread_cond_wait (mthread_cond_t * __cond, mthrea/
+mthread_create	mthread.c	/^mthread_create (mthread_t * __threadp,$/
+mthread_equal	mthread.c	/^mthread_equal (mthread_t __thread1, mthread_t __th/
+mthread_exit	mthread.c	/^mthread_exit (void *__retval)$/
+mthread_get_vp	mthread.c	/^mthread_virtual_processor_t* mthread_get_vp(){$/
+mthread_get_vp_rank	mthread.c	/^int mthread_get_vp_rank(){$/
+mthread_getspecific	mthread_key.c	/^mthread_getspecific (mthread_key_t __key)$/
+mthread_idle_task	mthread.c	/^static void mthread_idle_task(void* arg){$/
+mthread_init_lib	mthread.c	/^static inline void mthread_init_lib(long i){$/
+mthread_init_thread	mthread.c	/^static inline void mthread_init_thread(struct mthr/
+mthread_init_vp	mthread.c	/^static inline void mthread_init_vp(mthread_virtual/
+mthread_insert_first	mthread.c	/^void mthread_insert_first(struct mthread_s* item, /
+mthread_insert_last	mthread.c	/^void mthread_insert_last(struct mthread_s* item, m/
+mthread_join	mthread.c	/^mthread_join (mthread_t __th, void **__thread_retu/
+mthread_key_create	mthread_key.c	/^mthread_key_create (mthread_key_t * __key, void (*/
+mthread_key_delete	mthread_key.c	/^mthread_key_delete (mthread_key_t __key)$/
+mthread_list_init	mthread.c	/^static inline void mthread_list_init(mthread_list_/
+mthread_log	mthread_debug.c	/^int mthread_log(char* part, const char *format, ../
+mthread_log_init	mthread_debug.c	/^int mthread_log_init(){$/
+mthread_lwp_start	mthread.c	/^static void* mthread_lwp_start(void* arg){$/
+mthread_main	mthread.c	/^static void* mthread_main(void* arg){$/
+mthread_mctx_set	mthread.c	/^mthread_mctx_set (struct mthread_s * mctx,$/
+mthread_mctx_swap	mthread.c	/^mthread_mctx_swap (struct mthread_s * cur_mctx, st/
+mthread_mutex_destroy	mthread_mutex.c	/^mthread_mutex_destroy (mthread_mutex_t * __mutex)$/
+mthread_mutex_init	mthread_mutex.c	/^mthread_mutex_init (mthread_mutex_t * __mutex,$/
+mthread_mutex_lock	mthread_mutex.c	/^mthread_mutex_lock (mthread_mutex_t * __mutex)$/
+mthread_mutex_trylock	mthread_mutex.c	/^mthread_mutex_trylock (mthread_mutex_t * __mutex)$/
+mthread_mutex_unlock	mthread_mutex.c	/^mthread_mutex_unlock (mthread_mutex_t * __mutex)$/
+mthread_once	mthread_once.c	/^mthread_once (mthread_once_t * __once_control, voi/
+mthread_remove_first	mthread.c	/^struct mthread_s* mthread_remove_first(mthread_lis/
+mthread_self	mthread.c	/^mthread_self (void)$/
+mthread_sem_destroy	mthread_sem.c	/^mthread_sem_destroy (mthread_sem_t * sem)$/
+mthread_sem_getvalue	mthread_sem.c	/^mthread_sem_getvalue (mthread_sem_t * sem, int *sv/
+mthread_sem_init	mthread_sem.c	/^mthread_sem_init (mthread_sem_t * sem, unsigned in/
+mthread_sem_post	mthread_sem.c	/^mthread_sem_post (mthread_sem_t * sem)$/
+mthread_sem_trywait	mthread_sem.c	/^mthread_sem_trywait (mthread_sem_t * sem)$/
+mthread_sem_wait	mthread_sem.c	/^mthread_sem_wait (mthread_sem_t * sem)$/
+mthread_setspecific	mthread_key.c	/^mthread_setspecific (mthread_key_t __key, const vo/
+mthread_spinlock_lock	mthread_tst.c	/^void mthread_spinlock_lock(mthread_tst_t *atomic){/
+mthread_spinlock_unlock	mthread_tst.c	/^void mthread_spinlock_unlock(mthread_tst_t *atomic/
+mthread_start_thread	mthread.c	/^static void mthread_start_thread(void* arg){$/
+mthread_test_and_set	mthread_tst.c	/^int mthread_test_and_set(mthread_tst_t *atomic){$/
+mthread_work_take	mthread.c	/^static struct mthread_s* mthread_work_take(mthread/
+mthread_yield	mthread.c	/^void mthread_yield(){$/
+not_implemented	mthread_internal.h	/^#define not_implemented() __not_implemented(__FUNC/
+safe_malloc	mthread_debug.c	/^void *safe_malloc(size_t size){$/

@@ -1,0 +1,1063 @@
+==22968== Memcheck, a memory error detector
+==22968== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==22968== Using Valgrind-3.12.0.SVN and LibVEX; rerun with -h for copyright info
+==22968== Command: ./test_mutex_create
+==22968== 
+==22968== Warning: client switching stacks?  SP change: 0x6ff5ef8 --> 0x5435348
+==22968==          to suppress, use: --max-stackframe=29100976 or greater
+==22968== Warning: client switching stacks?  SP change: 0x67f4ef8 --> 0x54557a8
+==22968==          to suppress, use: --max-stackframe=20576080 or greater
+==22968== Warning: client switching stacks?  SP change: 0x5ff3ef8 --> 0x5475c08
+==22968==          to suppress, use: --max-stackframe=12051184 or greater
+==22968==          further instances of this message will not be shown.
+==22968== Conditional jump or move depends on uninitialised value(s)
+==22968==    at 0x109871: mthread_create (mthread.c:344)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Thread 2:
+==22968== Invalid read of size 8
+==22968==    at 0x5096EBC: swapcontext (swapcontext.S:93)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576140 is 128 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EC3: swapcontext (swapcontext.S:94)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576138 is 120 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EC7: swapcontext (swapcontext.S:95)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576108 is 72 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ECB: swapcontext (swapcontext.S:96)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576110 is 80 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ECF: swapcontext (swapcontext.S:97)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576118 is 88 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ED3: swapcontext (swapcontext.S:98)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576120 is 96 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ED7: swapcontext (swapcontext.S:102)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576168 is 168 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EDF: swapcontext (swapcontext.S:106)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576128 is 104 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EE3: swapcontext (swapcontext.S:107)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576148 is 136 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EEA: swapcontext (swapcontext.S:108)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576158 is 152 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF1: swapcontext (swapcontext.S:109)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760e8 is 40 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF5: swapcontext (swapcontext.S:110)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760f0 is 48 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF9: swapcontext (swapcontext.S:113)
+==22968==    by 0x10962F: mthread_lwp_start (mthread.c:266)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576130 is 112 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x4C33134: __GI_mempcpy (vg_replace_strmem.c:1518)
+==22968==    by 0x50C7E53: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1327)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5476080 is 0 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x509C90D: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760b7 is 55 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x509C933: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760b8 is 56 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x4C33134: __GI_mempcpy (vg_replace_strmem.c:1518)
+==22968==    by 0x50C7E53: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1327)
+==22968==    by 0x509CA02: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760b9 is 57 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x4C33134: __GI_mempcpy (vg_replace_strmem.c:1518)
+==22968==    by 0x50C7E53: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1327)
+==22968==    by 0x509C4B8: vfprintf (vfprintf.c:1668)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760c0 is 64 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Syscall param write(buf) points to unaddressable byte(s)
+==22968==    at 0x513098D: ??? (syscall-template.S:84)
+==22968==    by 0x50C7816: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1271)
+==22968==    by 0x50C6B61: new_do_write (fileops.c:526)
+==22968==    by 0x50C88D8: _IO_do_write@@GLIBC_2.2.5 (fileops.c:502)
+==22968==    by 0x50C6977: _IO_file_sync@@GLIBC_2.2.5 (fileops.c:882)
+==22968==    by 0x50BC03B: fflush (iofflush.c:40)
+==22968==    by 0x109D0B: mthread_log (mthread_debug.c:64)
+==22968==    by 0x109662: mthread_start_thread (mthread.c:272)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5476080 is 0 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x109245: __mthread_yield (mthread.c:146)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x109254: __mthread_yield (mthread.c:146)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x109263: __mthread_yield (mthread.c:147)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x509C90D: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1092DF: __mthread_yield (mthread.c:159)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760ba is 58 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x509C933: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1092DF: __mthread_yield (mthread.c:159)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760bb is 59 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E10: swapcontext (swapcontext.S:39)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576140 is 128 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E17: swapcontext (swapcontext.S:40)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576138 is 120 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E1B: swapcontext (swapcontext.S:41)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576108 is 72 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E1F: swapcontext (swapcontext.S:42)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576110 is 80 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E23: swapcontext (swapcontext.S:43)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576118 is 88 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E27: swapcontext (swapcontext.S:44)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576120 is 96 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E2B: swapcontext (swapcontext.S:46)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576128 is 104 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E2F: swapcontext (swapcontext.S:47)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576130 is 112 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E33: swapcontext (swapcontext.S:48)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576148 is 136 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E3A: swapcontext (swapcontext.S:49)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576158 is 152 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E41: swapcontext (swapcontext.S:50)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760e8 is 40 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E45: swapcontext (swapcontext.S:51)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760f0 is 48 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E4D: swapcontext (swapcontext.S:54)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576168 is 168 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E59: swapcontext (swapcontext.S:56)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576160 is 160 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x5096E67: swapcontext (swapcontext.S:62)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55761a0 is 224 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 4
+==22968==    at 0x5096E6E: swapcontext (swapcontext.S:64)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576268 is 424 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 4
+==22968==    at 0x5096E70: swapcontext (swapcontext.S:65)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576280 is 448 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Syscall param rt_sigprocmask(set) points to unaddressable byte(s)
+==22968==    at 0x5096E9A: swapcontext (swapcontext.S:79)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5475d88 is 296 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x1094B7: mthread_init_lib (mthread.c:234)
+==22968==    by 0x109610: mthread_lwp_start (mthread.c:263)
+==22968==    by 0x4E3F4A3: start_thread (pthread_create.c:456)
+==22968== 
+==22968== Syscall param rt_sigprocmask(oldset) points to unaddressable byte(s)
+==22968==    at 0x5096E9A: swapcontext (swapcontext.S:79)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55761e8 is 296 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EA5: swapcontext (swapcontext.S:87)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5475d40 is 224 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x1094B7: mthread_init_lib (mthread.c:234)
+==22968==    by 0x109610: mthread_lwp_start (mthread.c:263)
+==22968==    by 0x4E3F4A3: start_thread (pthread_create.c:456)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5475e08 is 424 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x1094B7: mthread_init_lib (mthread.c:234)
+==22968==    by 0x109610: mthread_lwp_start (mthread.c:263)
+==22968==    by 0x4E3F4A3: start_thread (pthread_create.c:456)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x5096EAE: swapcontext (swapcontext.S:89)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5475e20 is 448 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x1094B7: mthread_init_lib (mthread.c:234)
+==22968==    by 0x109610: mthread_lwp_start (mthread.c:263)
+==22968==    by 0x4E3F4A3: start_thread (pthread_create.c:456)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EB5: swapcontext (swapcontext.S:92)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5475d00 is 160 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x1094B7: mthread_init_lib (mthread.c:234)
+==22968==    by 0x109610: mthread_lwp_start (mthread.c:263)
+==22968==    by 0x4E3F4A3: start_thread (pthread_create.c:456)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x5096EFF: swapcontext (swapcontext.S:117)
+==22968==    by 0x55760BF: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1090B8: mthread_mctx_swap (mthread.c:105)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1090B9: mthread_mctx_swap (mthread.c:105)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109309: __mthread_yield (mthread.c:165)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109337: __mthread_yield (mthread.c:172)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109338: __mthread_yield (mthread.c:172)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1093CA: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1091A1: __mthread_yield (mthread.c:130)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109E18: __mthread_test_and_set (mthread_tst.c:10)
+==22968==    by 0x109E3A: mthread_test_and_set (mthread_tst.c:58)
+==22968==    by 0x109E5B: mthread_spinlock_lock (mthread_tst.c:66)
+==22968==    by 0x108F9F: mthread_remove_first (mthread.c:63)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108FA4: mthread_remove_first (mthread.c:64)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109E6F: mthread_spinlock_unlock (mthread_tst.c:75)
+==22968==    by 0x108FF0: mthread_remove_first (mthread.c:71)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Conditional jump or move depends on uninitialised value(s)
+==22968==    at 0x1090FC: mthread_work_take (mthread.c:112)
+==22968==    by 0x1091CF: __mthread_yield (mthread.c:135)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1091D8: __mthread_yield (mthread.c:139)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1091E5: __mthread_yield (mthread.c:140)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1091EC: __mthread_yield (mthread.c:140)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109219: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109E18: __mthread_test_and_set (mthread_tst.c:10)
+==22968==    by 0x109E3A: mthread_test_and_set (mthread_tst.c:58)
+==22968==    by 0x109E5B: mthread_spinlock_lock (mthread_tst.c:66)
+==22968==    by 0x108F06: mthread_insert_last (mthread.c:48)
+==22968==    by 0x109227: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108F0B: mthread_insert_last (mthread.c:49)
+==22968==    by 0x109227: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108F2A: mthread_insert_last (mthread.c:51)
+==22968==    by 0x109227: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108F35: mthread_insert_last (mthread.c:52)
+==22968==    by 0x109227: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109E6F: mthread_spinlock_unlock (mthread_tst.c:75)
+==22968==    by 0x108F78: mthread_insert_last (mthread.c:58)
+==22968==    by 0x109227: __mthread_yield (mthread.c:141)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x10922C: __mthread_yield (mthread.c:142)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x109238: __mthread_yield (mthread.c:145)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108FB0: mthread_remove_first (mthread.c:65)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108FC6: mthread_remove_first (mthread.c:66)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108FCD: mthread_remove_first (mthread.c:67)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x108FD9: mthread_remove_first (mthread.c:68)
+==22968==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1092B0: __mthread_yield (mthread.c:158)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x1092E8: __mthread_yield (mthread.c:160)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Syscall param rt_sigprocmask(set) points to uninitialised byte(s)
+==22968==    at 0x5096E9A: swapcontext (swapcontext.S:79)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55761e8 is 296 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Conditional jump or move depends on uninitialised value(s)
+==22968==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Conditional jump or move depends on uninitialised value(s)
+==22968==    at 0x5096EAE: swapcontext (swapcontext.S:89)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EBC: swapcontext (swapcontext.S:93)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x55760BF: ???
+==22968==    by 0x559648F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==  Address 0x5576140 is 128 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EC3: swapcontext (swapcontext.S:94)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x55760BF: ???
+==22968==    by 0x559648F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==  Address 0x5576138 is 120 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EC7: swapcontext (swapcontext.S:95)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576108 is 72 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ECB: swapcontext (swapcontext.S:96)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576110 is 80 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ECF: swapcontext (swapcontext.S:97)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576118 is 88 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ED3: swapcontext (swapcontext.S:98)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576120 is 96 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096ED7: swapcontext (swapcontext.S:102)
+==22968==    by 0x5475C5F: ???
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576168 is 168 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Use of uninitialised value of size 8
+==22968==    at 0x5096EDE: swapcontext (swapcontext.S:103)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EDF: swapcontext (swapcontext.S:106)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576128 is 104 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EE3: swapcontext (swapcontext.S:107)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576148 is 136 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EEA: swapcontext (swapcontext.S:108)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576158 is 152 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF1: swapcontext (swapcontext.S:109)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760e8 is 40 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF5: swapcontext (swapcontext.S:110)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x55760f0 is 48 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x5096EF9: swapcontext (swapcontext.S:113)
+==22968==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==22968==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==22968==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576130 is 112 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x109681: mthread_start_thread (mthread.c:275)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576478 is 952 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 8
+==22968==    at 0x10968C: mthread_start_thread (mthread.c:275)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576470 is 944 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x10969F: mthread_start_thread (mthread.c:275)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576468 is 936 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 4
+==22968==    at 0x1096AA: mthread_start_thread (mthread.c:276)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid write of size 1
+==22968==    at 0x509C90D: vfprintf (vfprintf.c:1636)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1096DB: mthread_start_thread (mthread.c:277)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x54760b7 is 55 bytes inside a block of size 1,048,576 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x50BBA61: _IO_file_doallocate (filedoalloc.c:101)
+==22968==    by 0x50C9A75: _IO_doallocbuf (genops.c:398)
+==22968==    by 0x50C8DD7: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:828)
+==22968==    by 0x50C7EB5: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1339)
+==22968==    by 0x509BE35: vfprintf (vfprintf.c:1320)
+==22968==    by 0x109CF6: mthread_log (mthread_debug.c:62)
+==22968==    by 0x1093C9: mthread_idle_task (mthread.c:190)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968== 
+==22968== 
+==22968== More than 100 errors detected.  Subsequent errors
+==22968== will still be recorded, but in less detail than before.
+==22968== Invalid read of size 4
+==22968==    at 0x109245: __mthread_yield (mthread.c:146)
+==22968==    by 0x1096F5: mthread_start_thread (mthread.c:279)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Invalid read of size 4
+==22968==    at 0x109254: __mthread_yield (mthread.c:146)
+==22968==    by 0x1096F5: mthread_start_thread (mthread.c:279)
+==22968==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==22968==  Address 0x5576488 is 968 bytes inside a block of size 992 alloc'd
+==22968==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==22968==    by 0x109B23: safe_malloc (mthread_debug.c:20)
+==22968==    by 0x10985E: mthread_create (mthread.c:342)
+==22968==    by 0x108DD6: main (mutex_create_test.c:16)
+==22968== 
+==22968== Thread 1:
+==22968== Conditional jump or move depends on uninitialised value(s)
+==22968==    at 0x109A36: mthread_join (mthread.c:404)
+==22968==    by 0x108DE7: main (mutex_create_test.c:17)
+==22968== 
+==22968== Invalid write of size 8
+==22968==    at 0x109A47: mthread_join (mthread.c:408)
+==22968==    by 0x108DE7: main (mutex_create_test.c:17)
+==22968==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==22968== 
+==22968== 
+==22968== Process terminating with default action of signal 11 (SIGSEGV)
+==22968==  Access not within mapped region at address 0x0
+==22968==    at 0x109A47: mthread_join (mthread.c:408)
+==22968==    by 0x108DE7: main (mutex_create_test.c:17)
+==22968==  If you believe this happened as a result of a stack
+==22968==  overflow in your program's main thread (unlikely but
+==22968==  possible), you can try to increase the size of the
+==22968==  main thread stack using the --main-stacksize= flag.
+==22968==  The main thread stack size used in this run was 8388608.
+==22968== 
+==22968== HEAP SUMMARY:
+==22968==     in use at exit: 662,680 bytes in 15 blocks
+==22968==   total heap usage: 17 allocs, 2 frees, 1,712,280 bytes allocated
+==22968== 
+==22968== LEAK SUMMARY:
+==22968==    definitely lost: 131,072 bytes in 1 blocks
+==22968==    indirectly lost: 0 bytes in 0 blocks
+==22968==      possibly lost: 816 bytes in 3 blocks
+==22968==    still reachable: 530,792 bytes in 11 blocks
+==22968==         suppressed: 0 bytes in 0 blocks
+==22968== Rerun with --leak-check=full to see details of leaked memory
+==22968== 
+==22968== For counts of detected and suppressed errors, rerun with: -v
+==22968== Use --track-origins=yes to see where uninitialised values come from
+==22968== ERROR SUMMARY: 679 errors from 104 contexts (suppressed: 0 from 0)

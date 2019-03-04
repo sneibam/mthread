@@ -1,0 +1,366 @@
+==23379== Memcheck, a memory error detector
+==23379== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==23379== Using Valgrind-3.12.0.SVN and LibVEX; rerun with -h for copyright info
+==23379== Command: ./test_mutex_create
+==23379== 
+==23379== Warning: client switching stacks?  SP change: 0x6ff5ef8 --> 0x5435348
+==23379==          to suppress, use: --max-stackframe=29100976 or greater
+==23379== Warning: client switching stacks?  SP change: 0x67f4ef8 --> 0x54557a8
+==23379==          to suppress, use: --max-stackframe=20576080 or greater
+==23379== Warning: client switching stacks?  SP change: 0x5ff3ef8 --> 0x5475c08
+==23379==          to suppress, use: --max-stackframe=12051184 or greater
+==23379==          further instances of this message will not be shown.
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EFF: swapcontext (swapcontext.S:117)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109358: mthread_idle_task (mthread.c:180)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1093AD: mthread_idle_task (mthread.c:190)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1091A1: __mthread_yield (mthread.c:130)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109E27: __mthread_test_and_set (mthread_tst.c:10)
+==23379==    by 0x109E49: mthread_test_and_set (mthread_tst.c:58)
+==23379==    by 0x109E6A: mthread_spinlock_lock (mthread_tst.c:66)
+==23379==    by 0x108F9F: mthread_remove_first (mthread.c:63)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108FA4: mthread_remove_first (mthread.c:64)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108FB0: mthread_remove_first (mthread.c:65)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108FC6: mthread_remove_first (mthread.c:66)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108FCD: mthread_remove_first (mthread.c:67)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x108FD3: mthread_remove_first (mthread.c:67)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108FD9: mthread_remove_first (mthread.c:68)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109E7E: mthread_spinlock_unlock (mthread_tst.c:75)
+==23379==    by 0x108FF0: mthread_remove_first (mthread.c:71)
+==23379==    by 0x1091B8: __mthread_yield (mthread.c:131)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1091D8: __mthread_yield (mthread.c:139)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1091E5: __mthread_yield (mthread.c:140)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1091EC: __mthread_yield (mthread.c:140)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109219: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109E27: __mthread_test_and_set (mthread_tst.c:10)
+==23379==    by 0x109E49: mthread_test_and_set (mthread_tst.c:58)
+==23379==    by 0x109E6A: mthread_spinlock_lock (mthread_tst.c:66)
+==23379==    by 0x108F06: mthread_insert_last (mthread.c:48)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108F0B: mthread_insert_last (mthread.c:49)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x108F11: mthread_insert_last (mthread.c:49)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108F2A: mthread_insert_last (mthread.c:51)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x108F35: mthread_insert_last (mthread.c:52)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109E7E: mthread_spinlock_unlock (mthread_tst.c:75)
+==23379==    by 0x108F78: mthread_insert_last (mthread.c:58)
+==23379==    by 0x109227: __mthread_yield (mthread.c:141)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x10922C: __mthread_yield (mthread.c:142)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109238: __mthread_yield (mthread.c:145)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1092B0: __mthread_yield (mthread.c:158)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1092E8: __mthread_yield (mthread.c:160)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Syscall param rt_sigprocmask(set) points to uninitialised byte(s)
+==23379==    at 0x5096E9A: swapcontext (swapcontext.S:79)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379==  Address 0x5414c78 is 296 bytes inside a block of size 992 alloc'd
+==23379==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==23379==    by 0x109B32: safe_malloc (mthread_debug.c:20)
+==23379==    by 0x1094E4: mthread_init_lib (mthread.c:240)
+==23379==    by 0x109743: __mthread_lib_init (mthread.c:294)
+==23379==    by 0x10981A: mthread_create (mthread.c:331)
+==23379==    by 0x108DD6: main (mutex_create_test.c:16)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x5096EAE: swapcontext (swapcontext.S:89)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EDE: swapcontext (swapcontext.S:103)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EFF: swapcontext (swapcontext.S:117)
+==23379==    by 0x55760BF: ???
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1090B8: mthread_mctx_swap (mthread.c:105)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x109A45: mthread_join (mthread.c:407)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x10924E: __mthread_yield (mthread.c:146)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x10925D: __mthread_yield (mthread.c:146)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x10926B: __mthread_yield (mthread.c:147)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Syscall param rt_sigprocmask(set) points to uninitialised byte(s)
+==23379==    at 0x5096E9A: swapcontext (swapcontext.S:79)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379==  Address 0x55761e8 is 296 bytes inside a block of size 992 alloc'd
+==23379==    at 0x4C2BBAF: malloc (vg_replace_malloc.c:299)
+==23379==    by 0x109B32: safe_malloc (mthread_debug.c:20)
+==23379==    by 0x10985E: mthread_create (mthread.c:344)
+==23379==    by 0x108DD6: main (mutex_create_test.c:16)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x5096EAC: swapcontext (swapcontext.S:88)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Conditional jump or move depends on uninitialised value(s)
+==23379==    at 0x5096EAE: swapcontext (swapcontext.S:89)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x109AD6: mthread_yield (mthread.c:422)
+==23379==    by 0x109A37: mthread_join (mthread.c:408)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EDE: swapcontext (swapcontext.S:103)
+==23379==    by 0x1090B2: mthread_mctx_swap (mthread.c:103)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EFF: swapcontext (swapcontext.S:117)
+==23379==    by 0x541472F: ???
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1090B8: mthread_mctx_swap (mthread.c:105)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x10967C: mthread_start_thread (mthread.c:274)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109696: mthread_start_thread (mthread.c:275)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x5096EFF: swapcontext (swapcontext.S:117)
+==23379==    by 0x5414B4F: ???
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1090B8: mthread_mctx_swap (mthread.c:105)
+==23379==    by 0x1092FE: __mthread_yield (mthread.c:161)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1090B9: mthread_mctx_swap (mthread.c:105)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109309: __mthread_yield (mthread.c:165)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109337: __mthread_yield (mthread.c:172)
+==23379==    by 0x1093D5: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x109338: __mthread_yield (mthread.c:172)
+==23379== 
+==23379== Use of uninitialised value of size 8
+==23379==    at 0x1093CA: mthread_idle_task (mthread.c:192)
+==23379==    by 0x5098FFF: ??? (in /lib/x86_64-linux-gnu/libc-2.24.so)
+==23379== 
+==23379== Invalid write of size 8
+==23379==    at 0x109A56: mthread_join (mthread.c:411)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==23379== 
+==23379== 
+==23379== Process terminating with default action of signal 11 (SIGSEGV)
+==23379==  Access not within mapped region at address 0x0
+==23379==    at 0x109A56: mthread_join (mthread.c:411)
+==23379==    by 0x108DE7: main (mutex_create_test.c:17)
+==23379==  If you believe this happened as a result of a stack
+==23379==  overflow in your program's main thread (unlikely but
+==23379==  possible), you can try to increase the size of the
+==23379==  main thread stack using the --main-stacksize= flag.
+==23379==  The main thread stack size used in this run was 8388608.
+==23379== 
+==23379== HEAP SUMMARY:
+==23379==     in use at exit: 662,680 bytes in 15 blocks
+==23379==   total heap usage: 17 allocs, 2 frees, 1,712,280 bytes allocated
+==23379== 
+==23379== LEAK SUMMARY:
+==23379==    definitely lost: 131,072 bytes in 1 blocks
+==23379==    indirectly lost: 0 bytes in 0 blocks
+==23379==      possibly lost: 131,888 bytes in 4 blocks
+==23379==    still reachable: 399,720 bytes in 10 blocks
+==23379==         suppressed: 0 bytes in 0 blocks
+==23379== Rerun with --leak-check=full to see details of leaked memory
+==23379== 
+==23379== For counts of detected and suppressed errors, rerun with: -v
+==23379== Use --track-origins=yes to see where uninitialised values come from
+==23379== ERROR SUMMARY: 74 errors from 53 contexts (suppressed: 0 from 0)
