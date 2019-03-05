@@ -10,7 +10,7 @@ void* run (void* arg)
 {
 	long rank = (long)arg;
 	mthread_sem_wait(&sem);
-	printf("Coucou, je suis le thread %d, sem counter = %d\n", rank, sem.value);
+	printf("Coucou, je suis le thread %ld, sem counter = %d\n", rank, sem.value);
 	mthread_yield(); //
 	sleep(60);
 	mthread_sem_post(&sem);

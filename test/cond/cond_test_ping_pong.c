@@ -9,7 +9,7 @@ pthread_cond_t cond_ping = PTHREAD_COND_INITIALIZER;
 pthread_cond_t cond_pong = PTHREAD_COND_INITIALIZER;
 volatile int
 
-void* ping(void* arg)
+void *ping(void* arg)
 {
 	sleep(10);
 	while(1)
@@ -24,7 +24,7 @@ void* ping(void* arg)
 }
 
 
-void* pong(void* arg)
+void *pong(void* arg)
 {
 
 

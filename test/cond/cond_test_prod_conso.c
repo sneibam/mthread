@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
-#include "../mthread.h"
-
+#include "../../mthread.h"
 /* Producteur/Consommateur Test */
 
 volatile char theChar = '\0';
