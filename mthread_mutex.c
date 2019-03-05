@@ -14,11 +14,13 @@ mthread_mutex_init (mthread_mutex_t * __mutex,
     if (__mutex_attr != NULL) 
         not_implemented ();
 
+    // Allocation de la liste des threads en attente
     __mutex->list = malloc(sizeof(mthread_list_t));
     if (__mutex->list == NULL) {
         perror("malloc");
         exit(errno);
     }
+    // Initialisation par defaut de tout les elements de la structure mthread_mutex_t
 
     __mutex->list->first = NULL;
     __mutex->list->last  = NULL;
@@ -36,7 +38,7 @@ mthread_mutex_destroy (mthread_mutex_t * __mutex)
     if (__mutex == NULL) 
         not_implemented ();
 
-    mthread_spinlock_lock(&__mutex->lock);
+    mthread_spinlock_lock(&__mutex->lock); // On prend le verrou
     if (__mutex->nb_thread != 0)
         return EBUSY;
     free(__mutex->list);

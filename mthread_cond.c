@@ -21,6 +21,7 @@ mthread_cond_init (mthread_cond_t * __cond,
 	__cond->list->first = NULL;
 	__cond->list->last  = NULL;
 	__cond->nb_thread   = 0;
+	__cond->lock = 0;
 
 	fprintf(stderr, "[COND_INIT] COND initialized\n");
 
@@ -71,14 +72,14 @@ mthread_cond_signal (mthread_cond_t * __cond)
 			vp = mthread_get_vp();
 			thread_to_wake_up->status = RUNNING;
 			mthread_insert_last(thread_to_wake_up, &(vp->ready_list));
-			__cond->nb_thread = __cond->nb_thread - 1;
+			//__cond->nb_thread = __cond->nb_thread - 1;
 		}
 	}
 
 	mthread_spinlock_unlock(&__cond->lock);
 
 	mthread_log("COND_SIGNAL","The condition has been signaled, a thread has been awakened\n");
-	return retval;
+	return 0;
 }
 
   /* Wake up all threads waiting for condition variables COND.  */
@@ -113,7 +114,6 @@ mthread_cond_broadcast (mthread_cond_t * __cond)
 	mthread_spinlock_unlock(&__cond->lock);
 
 	mthread_log("COND_BROADCAST","The condition has been signaled, all threads have been awakened\n");
-	return retval;
 
 	return 0;
 }
@@ -127,25 +127,30 @@ mthread_cond_wait (mthread_cond_t * __cond, mthread_mutex_t * __mutex)
 	mthread_t self;
 	mthread_virtual_processor_t *vp;
 
-	if (__cond == NULL)
+	if (__cond == NULL || __mutex == NULL) {
 		return retval;
+	}
 
-	mthread_mutex_unlock(__mutex);
+
 	mthread_spinlock_lock(&__cond->lock);
+
 
 	/*if (__cond->nb_thread == 0) {
 		__cond->nb_thread = 1;
 		mthread_spinlock_unlock(&__cond->lock);
 	} else {*/
+
 	self = mthread_self();
 	mthread_insert_last(self,__cond->list);
 	self->status = BLOCKED;
 	vp = mthread_get_vp();
 	vp->p = &__cond->lock;
+	mthread_mutex_unlock(__mutex);
 	mthread_yield();
+	mthread_mutex_lock(__mutex);
 
 
 
 	mthread_log("COND_WAIT","Waiting for the condition to be satisfied\n");
-	return retval;
+	return 0;
 }
