@@ -11,7 +11,7 @@ extern "C"
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <ucontext.h>
+#include <sys/ucontext.h>
 
 #ifndef __GNUC__
 #define inline

@@ -1,6 +1,13 @@
+/*
+* Premier test des mutex
+* Le but de ce programme est de lancer NB_THREADS threads. Chacun de ces threads est censé incrementer
+* la variable i. À la fin du traitement la valeur de i devrait etre egale au nombre de threads.
+* Cet exemple nous permet de constater l'utilité des mutex. En effet, le mutex nous permettent d'assurer l'exclusion
+* mutuelle, et donc eviter que 2 threads n'incrementent pas la variable i en même temps.
+*/
 #include <stdio.h>
-#include "../mthread.h"
-
+#include "../../mthread.h"
+#define NB_THREADS 50
 int i=0;
 
 mthread_mutex_t mutex;

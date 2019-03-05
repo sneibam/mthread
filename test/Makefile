@@ -2,4 +2,8 @@
 CC=gcc
 CFLAGS=-Wall -g -I
 DEPS=lib/libmthread.a
-LIBDIR=lib
+LIBDIR=lib/
+
+mutex/mutex_test:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c -o $@ -lpthread
+	./$@

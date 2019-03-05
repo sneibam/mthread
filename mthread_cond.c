@@ -12,18 +12,22 @@ mthread_cond_init (mthread_cond_t * __cond,
  if (__cond_attr != NULL)
 		not_implemented ();
 
+	// Allocation de la liste __cond->list des threads
 	__cond->list = malloc(sizeof(mthread_list_t));
 	if (__cond->list == NULL) {
 		perror("malloc");
 		exit(errno);
 	}
 
+	// On initialise tous les éléments de la structure par des valeurs par défaut.
 	__cond->list->first = NULL;
 	__cond->list->last  = NULL;
 	__cond->nb_thread   = 0;
 	__cond->lock = 0;
 
+
 	fprintf(stderr, "[COND_INIT] COND initialized\n");
+	mthread_log("COND_INIT","CONDITION initialized\n");
 
   return 0;
 }
@@ -36,13 +40,16 @@ mthread_cond_destroy (mthread_cond_t * __cond)
 	if (__cond == NULL)
 		not_implemented ();
 
+	// On prend le verrou spinlock
 	mthread_spinlock_lock(&__cond->lock);
-	if (__cond->nb_thread != 0) {
+	if (__cond->nb_thread != 0) { // S'il y a toujours des threads dans la liste de threads en attente alors on retourne EBUSY
 		fprintf(stderr, "[COND_DESTROY] The condition is busy, there is still some threads waiting for the condition\n");
 		return EBUSY;
 	}
+	// Sinon on libère la mémoire.
 	free(__cond->list);
 	__cond->list = NULL;
+	// On libère le verrou spinlock
 	mthread_spinlock_unlock(&__cond->lock);
 
 	fprintf(stderr, "[COND_DESTROY] The condition has been destroyed\n");
@@ -140,6 +147,7 @@ mthread_cond_wait (mthread_cond_t * __cond, mthread_mutex_t * __mutex)
 		mthread_spinlock_unlock(&__cond->lock);
 	} else {*/
 
+	__cond->nb_thread++;
 	self = mthread_self();
 	mthread_insert_last(self,__cond->list);
 	self->status = BLOCKED;
@@ -148,6 +156,7 @@ mthread_cond_wait (mthread_cond_t * __cond, mthread_mutex_t * __mutex)
 	mthread_mutex_unlock(__mutex);
 	mthread_yield();
 	mthread_mutex_lock(__mutex);
+
 
 
 
