@@ -14,7 +14,7 @@ void *lire(void* name)
 {
 	sleep(5); // Synchronisation
 	do{
-		while(affiche==1) printf("Waiting\n");
+		//while(affiche==1) printf("Waiting\n");
 		mthread_mutex_lock(&lock);
 		affiche = 1;
 		printf("Veuillez entrer un caractere: ");

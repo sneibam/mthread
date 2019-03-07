@@ -7,6 +7,29 @@ LIBDIR=../lib/
 mutex/mutex_test:
 	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
 	./$@.exe
+
+mutex/mutex_test_create:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+	
+mutex/mutex_test_destroy:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+	
+mutex/mutex_test_init:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+
+mutex/mutex_test_try_lock:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+
+mutex/mutex_test_lock:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+
+
+
 cond/cond_test_ping_pong:
 	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
 	./$@.exe

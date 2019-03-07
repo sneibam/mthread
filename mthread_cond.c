@@ -27,7 +27,7 @@ mthread_cond_init (mthread_cond_t * __cond,
 
 
 	fprintf(stderr, "[COND_INIT] COND initialized\n");
-	mthread_log("COND_INIT","CONDITION initialized\n");
+	//mthread_log("COND_INIT","CONDITION initialized\n");
 
   return 0;
 }
