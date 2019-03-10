@@ -126,6 +126,7 @@ mthread_sem_destroy (mthread_sem_t * sem)
 	// On prend le verrou spinlock
 	mthread_spinlock_lock(&sem->lock);
 	if (sem->list->first != NULL) { // Si il reste encore des threads en attente du semaphore alors on ne detruit pas celui-ci.
+		fprintf(stderr, "[SEM_DESTROY] SEMAPHORE is still busy\n");
 		mthread_log("SEM_DESTROY","SEMAPHORE is still busy\n");
 		mthread_spinlock_unlock(&sem->lock);
 		return EBUSY;
@@ -133,7 +134,7 @@ mthread_sem_destroy (mthread_sem_t * sem)
 	free(sem->list);
 	sem->list = NULL;
 	mthread_spinlock_unlock(&sem->lock);
-
+	fprintf(stderr, "[SEM_DESTROY] SEMAPHORE destroyed\n");
 	mthread_log("SEM_DESTROY","SEMAPHORE destroyed\n");
 	return 0;
 }

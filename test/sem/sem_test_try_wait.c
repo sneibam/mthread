@@ -11,12 +11,12 @@ void* run (void* arg)
 {
 	long rank = (long)arg;
 	if (mthread_sem_trywait(&sem) == EINVAL) {
-		printf("Coucou, je suis le thread %d, sem value = %d\n", rank, sem.value);
+		printf("Coucou, je suis le thread %ld, sem value = %d\n", rank, sem.value);
 		//mthread_yield();
 		sleep(10);
 		mthread_sem_post(&sem);
 	} else {
-		fprintf(stderr, "TRY LOCK failed, the semaphore value is %d\n", sem.value);
+		fprintf(stderr, "TRY LOCK failed for thread %ld, the semaphore value is %d\n",rank, sem.value);
 	}
 	return NULL;
 }

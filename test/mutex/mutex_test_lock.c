@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../mthread.h"
-#define NB_THREADS 5
+#define NB_THREADS 3
 int i=0;
 
 mthread_mutex_t mutex;

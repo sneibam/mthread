@@ -95,7 +95,6 @@ mthread_cond_broadcast (mthread_cond_t * __cond)
 {
 
 	int retval = EINVAL;
-	mthread_t* threads_to_wake_up;
 	mthread_virtual_processor_t *vp;
 
 	if (__cond == NULL)
@@ -106,15 +105,13 @@ mthread_cond_broadcast (mthread_cond_t * __cond)
 	if (__cond->nb_thread == 0) {
 		// Rien a faire
 	} else {
-		int i;
-		threads_to_wake_up = (mthread_t*)malloc(__cond->nb_thread*sizeof(mthread_t));
-		for (i=0;i<__cond->nb_thread; i++)
+		fprintf(stderr, "[COND_BROADCAST] BROADCASTING...");
+		while (__cond->list->first != NULL)
 		{
-			threads_to_wake_up[i] = mthread_remove_first(__cond->list);
+			mthread_t thread = mthread_remove_first(__cond->list);
+			thread->status = RUNNING;
 			vp = mthread_get_vp();
-			threads_to_wake_up[i]->status = RUNNING;
-			mthread_insert_last(threads_to_wake_up[i], &(vp->ready_list));
-			__cond->nb_thread = __cond->nb_thread - 1;
+			mthread_insert_last(thread, &(vp->ready_list));
 		}
 	}
 

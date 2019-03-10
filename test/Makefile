@@ -32,6 +32,19 @@ mutex/mutex_test_lock:
 
 # Condition
 
+cond/cond_test_init:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+	
+cond/cond_test_destroy:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+	
+cond/cond_test_broadcast:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+
+
 cond/cond_test_ping_pong:
 	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
 	./$@.exe
