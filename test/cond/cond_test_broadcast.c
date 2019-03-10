@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../mthread.h"
-#define NB_THREADS 20
+#define NB_THREADS 5
 
 mthread_mutex_t mutex;
 mthread_cond_t cond;
