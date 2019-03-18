@@ -78,8 +78,14 @@ sem/sem_test_try_wait:
 sem/sem_test_getvalue:
 	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
 	./$@.exe
+	
+# Parallel For
+parallel_for/parallel_for_test:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
 .PHONY: clean
 clean:
 	rm -f mutex/*.exe
 	rm -f sem/*.exe
 	rm -f cond/*.exe
+	rm -f parallel_for/*.exe

@@ -31,6 +31,12 @@ extern "C"
 	   mthread_tst_t lock;
 	   mthread_list_t *list;
   };
+  struct mthread_parallel_s {
+    	   volatile int nb_thread;
+    	   int schedule;
+   };
+   typedef struct mthread_parallel_s mthread_parallel_t;
+
   typedef struct mthread_cond_s mthread_cond_t;
 
   struct mthread_condattr_s;
@@ -157,6 +163,9 @@ extern "C"
   extern int mthread_sem_destroy (mthread_sem_t * sem);	/* undo sem_init() */
 
   extern void mthread_yield();
+
+
+  extern int mthread_parallel_for (mthread_parallel_t* data, void *(*routine)(void*), int indx_begin, int index_end, int step);
 
 #ifdef __cplusplus
 }
