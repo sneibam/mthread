@@ -33,4 +33,5 @@ dep/mthread_parallel_for.o dep/mthread_parallel_for.d: mthread_parallel_for.c /u
  /usr/include/x86_64-linux-gnu/bits/sigthread.h mthread.h \
  /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/string.h /usr/include/xlocale.h
