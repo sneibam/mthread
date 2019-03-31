@@ -28,7 +28,7 @@ Dans cette fonction, j'ai implémenté deux types de mode de répartition des it
 
 ## Tests
 
-Pour tester ces fonctionnalités du *parallel for* dans la bibliothèque **mthread**, deux fichiers tests ont été créée pour chaque type de scheduling.
+Pour tester ces fonctionnalités du *parallel for* dans la bibliothèque **mthread**, deux fichiers tests ont été créé pour chaque type de scheduling.
 
 Ces deux fichiers se trouvent dans le répertoire: **test/parallel_for**:
 
