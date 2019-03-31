@@ -5,6 +5,14 @@
 #include <string.h>
 
 
+/*
+* mthread_parallel_for
+* Cette fonction a 4 paramètres:
+* La structure de données contenant le nombre de thread, le type de scheduling ainsi que le chunk-size 
+* Un pointeur vers la fonction contenant la boucle à paralléliser.
+* L'index de debut et de fin ainsi que le pas
+*/
+
 int
 mthread_parallel_for(mthread_parallel_t* data, void *(*routine)(void*), int index_begin, int index_end, int step)
 {
@@ -68,18 +76,27 @@ mthread_parallel_for(mthread_parallel_t* data, void *(*routine)(void*), int inde
 	{
 		// Nombre d'iterations au total
 		int number_of_iterations = (index_end-index_begin+1)/step;
-		int number_of_threads_remaining = data->nb_thread; // Initialisation de la variablle number_of_threads_remaining
+		/* Initialisation de la variable number_of_threads_remaining
+		* Cette variable va nous permettre de savoir quand est-ce que tous les threads ont éxécuter au quelques itérations et qu'il faut leur réattribuer quelques itérations
+		*/
+		int number_of_threads_remaining = data->nb_thread; 
 		int k=0;
 		//int index_thread_to_wait = 0;
-		while(number_of_iterations > 0)
+		while(number_of_iterations > 0) // Tant qu'il reste des itérations
 		{
-			if (number_of_threads_remaining == 0)
+			if (number_of_threads_remaining == 0) 
+			// Lorsque qu'il n'ya plus de threads disponibles,\
+			 On attend la terminaison de tout les threads pour recommencer l'attribution des itérations.\
+			 Ceci n'est peut-etre pas la façon la plus optimale de procéder, car à chaque fois qu'il n'y a \
+			 plus de threads restants alors on devra attendre tous les threads.
+
 			{
 				for (i=0; i < data->nb_thread; i++) {
 					mthread_join(threads[i], NULL);
 					number_of_threads_remaining++;
 				}
 			}
+			// On attribut a chaque thread au moins un paquet de 'chunk_size' itérations sauf si le nombre d'itérations restantes est inférieur à la valeur du chunk-size
 			int chunk_size_for_thread = data->chunk_size;
 			if (number_of_iterations < chunk_size_for_thread)
 				// Si le nombre d'itérations restantes est inféreieure au chunksize alors le thread suivant executera toutes les iterations restantes
@@ -88,9 +105,9 @@ mthread_parallel_for(mthread_parallel_t* data, void *(*routine)(void*), int inde
 			}
 			int i = data->nb_thread - number_of_threads_remaining; // Index du thread
 			int* args = (int*)malloc(3*sizeof(int)); // Allocation mémoire de la liste des arguments. Ces arguments sont l'index de la premiere iteration, l'index de la derniere iteration et le pas
-			args[0] = k;
-			args[1] = k+(chunk_size_for_thread*step) - 1;
-			args[2] = step;
+			args[0] = k; // Index de debut
+			args[1] = k+(chunk_size_for_thread*step) - 1; // Index de fin
+			args[2] = step; // Step
 			k = k+(chunk_size_for_thread*step); // On met a jour la valeur de k pour qu\'elle prenne l\'index de la premiere iteration du thread suivant.
 			fprintf(stderr, "[PARALLEL_FOR] Appel a la routine par le thread {%d} avec les arguments suivants: %d, %d, %d\n",i, args[0], args[1], args[2]);
 			// On crée le thread avec la routine et les arguments associes au thread.

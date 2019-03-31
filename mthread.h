@@ -31,11 +31,12 @@ extern "C"
 	   mthread_tst_t lock;
 	   mthread_list_t *list;
   };
+  // Structure de données contenant les variables nécessaires pour le mthread_parallel_for
   struct mthread_parallel_s {
-    	   volatile int nb_thread;
-    	   int schedule;
-	   int chunk_size;
-	   //void** shared_variables; // Linked list of shared variables
+    	   volatile int nb_thread; // Nombre de thread en parallèle pour la boucle for
+    	   int schedule; // Le mode de répartition des itérations : (1 => Statique) & (2 => Dynamique)
+	       int chunk_size; 
+	   //void** shared_variables; // Array of shared variables
    };
    typedef struct mthread_parallel_s mthread_parallel_t;
 
