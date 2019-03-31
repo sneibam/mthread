@@ -2,6 +2,8 @@
 
 Le but était d'implémenter le maximum de fonctionnalité du *Open MP parallel_for*  dans la bibliothèque **mthread**.
 
+Voici les fonctionnalités du *parallel_for* que j'ai réussi à implémenter dans la bibliothèque **mthread**.
+
 - Parallélisation d'une boucle *for* avec un mode de répartition statique des itérations.
 - Parallélisation d'une boucle *for* avec un mode de répartition dynamique des itérations.
 
@@ -26,7 +28,7 @@ Dans cette fonction, j'ai implémenté deux types de modes de répartitions des 
 
 ## Tests
 
-Pour tester ces fonctionnalités du *parallel for* dans la bibliothéque **mthread**, deux fichiers tests ont été créée pour chaque type de scheduling.
+Pour tester ces fonctionnalités du *parallel for* dans la bibliothèque **mthread**, deux fichiers tests ont été créée pour chaque type de scheduling.
 
 Ces deux fichiers se trouvent dans le répertoire: **test/parallel_for**:
 
