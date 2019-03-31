@@ -34,6 +34,8 @@ extern "C"
   struct mthread_parallel_s {
     	   volatile int nb_thread;
     	   int schedule;
+	   int chunk_size;
+	   //void** shared_variables; // Linked list of shared variables
    };
    typedef struct mthread_parallel_s mthread_parallel_t;
 

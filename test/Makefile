@@ -80,7 +80,10 @@ sem/sem_test_getvalue:
 	./$@.exe
 	
 # Parallel For
-parallel_for/parallel_for_test:
+parallel_for/parallel_for_test_static_sched:
+	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
+	./$@.exe
+parallel_for/parallel_for_test_dynamic_sched:
 	$(CC) $(CFLAGS) $(LIBDIR) $@.c $(DEPS) -o $@.exe -lpthread
 	./$@.exe
 .PHONY: clean

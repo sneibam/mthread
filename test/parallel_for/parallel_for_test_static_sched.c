@@ -1,7 +1,7 @@
 #include "../../mthread.h"
 #include <errno.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 
 void* boucle(void* arg)
 {
@@ -9,11 +9,14 @@ void* boucle(void* arg)
 		printf("Erreur !!\n");
 		exit(EINVAL);
 	}
+	int val = 0;
 	int* tab = (int*)arg;
 	int i;
 	for(i = tab[0]; i <= tab[1]; i+=tab[2]) {
 		printf("[i=%d]Coucou\n", i);
+		val++;
 	}
+	printf("Val = %d\n", val);
 
 	return NULL;
 }

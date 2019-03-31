@@ -64,9 +64,40 @@ mthread_parallel_for(mthread_parallel_t* data, void *(*routine)(void*), int inde
 		}
 
 
-	} else if (data->schedule == 2) // Dynamic
+	} else if (data->schedule == 2) // Dynamic Scheduling
 	{
-
+		// Nombre d'iterations au total
+		int number_of_iterations = (index_end-index_begin+1)/step;
+		int number_of_threads_remaining = data->nb_thread; // Initialisation de la variablle number_of_threads_remaining
+		int k=0;
+		//int index_thread_to_wait = 0;
+		while(number_of_iterations > 0)
+		{
+			if (number_of_threads_remaining == 0)
+			{
+				for (i=0; i < data->nb_thread; i++) {
+					mthread_join(threads[i], NULL);
+					number_of_threads_remaining++;
+				}
+			}
+			int chunk_size_for_thread = data->chunk_size;
+			if (number_of_iterations < chunk_size_for_thread)
+				// Si le nombre d'itérations restantes est inféreieure au chunksize alors le thread suivant executera toutes les iterations restantes
+			{
+				chunk_size_for_thread = number_of_iterations;
+			}
+			int i = data->nb_thread - number_of_threads_remaining; // Index du thread
+			int* args = (int*)malloc(3*sizeof(int)); // Allocation mémoire de la liste des arguments. Ces arguments sont l'index de la premiere iteration, l'index de la derniere iteration et le pas
+			args[0] = k;
+			args[1] = k+(chunk_size_for_thread*step) - 1;
+			args[2] = step;
+			k = k+(chunk_size_for_thread*step); // On met a jour la valeur de k pour qu\'elle prenne l\'index de la premiere iteration du thread suivant.
+			fprintf(stderr, "[PARALLEL_FOR] Appel a la routine par le thread {%d} avec les arguments suivants: %d, %d, %d\n",i, args[0], args[1], args[2]);
+			// On crée le thread avec la routine et les arguments associes au thread.
+			mthread_create(&(threads[i]), NULL, routine, (void*)args);
+			number_of_threads_remaining --;
+			number_of_iterations = number_of_iterations - chunk_size_for_thread;
+		}
 	}
 
 	for (i = 0; i < data->nb_thread; i++) {
