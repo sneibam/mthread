@@ -24,7 +24,7 @@ La fonction principale **mthread_parallel_for** se trouve dans le fichier du **m
 Dans cette fonction, j'ai implémenté deux types de mode de répartition des itérations:
 
 - **Statique** : Remplissage d'un tableau qui permettra à chaque thread de connaitre exactement les itérations qu'il va exécuter. Le *chunk-size* est par défaut égal à 1.
-- **Dyamique** : On définit le nombre d'itérations au total, puis chaque thread, un après l'autre prendra un nombre d'itérations égalent à la valeur du *chunk_size* jusqu'à ce qu'il ne reste plus d'itérations.
+- **Dynamique** : On définit le nombre d'itérations au total, puis chaque thread, un après l'autre prendra un nombre d'itérations égalent à la valeur du *chunk_size* jusqu'à ce qu'il ne reste plus d'itérations.
 
 ## Tests
 
